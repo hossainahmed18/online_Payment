@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <title>
+
+		{% block title %} Bill.com {% endblock %}
+
+	 </title>
+
+      {% load static %}
+      <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'appone/css/sidebar.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'appone/css/sobpage.css' %}" type="text/css">
+
+
+
+      <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+      <script src="{% static 'bootstrap/js/html5shiv.min.js' %}"></script>
+
+      <script src="{% static 'bootstrap/js/respond.min.js' %}"></script>
+
+
+
+      <script src="{%static 'appone/js/side7.js' %}"></script>
+      <script src="{%static 'appone/js/devicee.js' %}"></script>
+      <script src="{%static 'appone/js/ajax.js' %}"></script>
+
+
+
+       <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+
+      {% block stylesheet %}
+      {% endblock %}
+
+
+    <![endif]-->
+  </head>
+
+
+
+  <body onload="device()">
+
+         <div class="container-fluid">
+                 <div class="row">
+
+                       <div id="pics" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+                                <div id="sidebar">
+
+                                        <ul>
+                                              <li>Home </li>
+                                              <li>About</li>
+                                              <li>Contact</li>
+                                        </ul>
+
+                                 </div>
+
+
+
+                                <div class="row" id="jinis">
+                                         <div class="col-lg-1 col-md-5 sol-sm-6 col-xs-3">
+                                                 <h2 class="toggle-btn" id="nimmi" onclick="sidebar()">
+                                                       &#9776;
+                                                 </h2>
+                                         </div>
+
+
+
+                                         <div class="col-lg-2 col-md-2 sol-sm-6 col-xs-9">
+                                                  <div style="width: auto;">
+
+                                                         <button data-target="#aboutModal" data-toggle="modal">
+                                                             <h3><i>Bill.com</i></h3>
+
+                                                         </button>
+                                                  </div>
+
+                                         </div>
+
+                                         <div class="col-lg-9 col-md-5 sol-sm-6 col-xs-3">
+
+                                             <div id="box">
+                                                  <ul class="nav nav-tabs nav-justified">
+                                                         <li role="presentation" class="active"><a href="{% url 'home' %}">Home</a></li>
+
+
+                                                         <li role="presentation" class="dropdown">
+                                                                <a id="info1" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                                                    <font color="black" size="3px"> <b> Current Bill </b> </font>  <span class="caret"></span>
+                                                                </a>
+                                                               <ul class="dropdown-menu">
+                                                                     <li ><a href="{% url 'billpay' %}">Bill Pay</a></li>
+                                                                     <li ><a href="{% url 'goajax' %}" >See Bill Information</a></li>
+                                                              </ul>
+
+                                                         </li>
+                                                        <li role="presentation" class="dropdown">
+                                                                <a id="info2" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                                                    <font color="black" size="3px"> <b> Gas Bill </b> </font> <span class="caret"></span>
+                                                                </a>
+                                                               <ul class="dropdown-menu">
+                                                                     <li ><a href="#">Bill Pay</a></li>
+                                                                     <li ><a href="#">See Bill Information</a></li>
+                                                              </ul>
+
+                                                        </li>
+
+                                                      {% if 'user' in request.COOKIES %}
+                                                                            <li role="presentation" class="dropdown">
+                                                                                            <a id="info2"  href="{% url 'regislogin' %}" role="button" aria-haspopup="true" aria-expanded="false" >
+                                                                                                <font color="black" size="3px"> <b> {{request.COOKIES.user}} </b> </font>
+                                                                                            </a>
+
+                                                                            </li>
+                                                                            <li role="presentation" class="dropdown">
+                                                                                            <a id="info2"  href="{% url 'logout' %}" role="button" aria-haspopup="true" aria-expanded="false" >
+                                                                                                <font color="black" size="3px"> <b> Logout </b> </font>
+                                                                                            </a>
+
+                                                                            </li>
+
+
+                                                                           {% else %}
+
+                                                                                    <li role="presentation" class="dropdown">
+                                                                                            <a id="info2"  href="{% url 'regislogin' %}" role="button" aria-haspopup="true" aria-expanded="false" >
+                                                                                                <font color="black" size="3px"> <b> Login/Register </b> </font>
+                                                                                            </a>
+
+                                                                                    </li>
+
+
+                                                      {% endif %}
+
+                                                  </ul>
+
+                                             </div>
+
+                                         </div>
+
+                                </div>
+								
+								
+								<!--------------->
+								
+								
+								{% block content %}
+
+                                {% endblock %}
+
+
+
+                       </div>
+
+                 </div>
+         </div>
+
+
+
+
+         <div class="modal" id="aboutModal" tabindex="-1">
+                                    <div class="modal-dialog">
+                                          <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button class="close" data-dismiss="modal">&times;</button>
+                                                    <h3 class="modal-title">About Us </h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                      <p> sed since the 1500s is reproduced below
+														  for those interested. Sections 1.10.32 and 1.10.33 from "
+														  de Finibus Bonorum et Malorum" by Cicero are also reproduced
+														  in their exact original form, accompanied by English versions
+														  from the 1914 translation by H. Rackham.
+													  </p>
+                                                </div>
+                                          </div>
+                                    </div>
+			 </div>
+      {% block script %}
+
+      {% endblock %}
+
+  </body>
+</html

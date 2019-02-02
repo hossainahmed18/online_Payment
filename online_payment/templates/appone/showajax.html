@@ -1,0 +1,40 @@
+
+       <h1>Unpaid </h1>
+       <table  class="table table-striped" style="width:100%">
+                          <tr>
+                               <th>Unpaid Month</th>
+                               <th>Bill</th>
+                          <tr>
+
+
+                          {% for p in billtablee %}
+                                <tr>
+                                    <td>{{ p.month }}</td>
+                                    <td>{{ p.amount }}</td>
+
+                                </tr>
+                          {% endfor %}
+
+       </table>
+
+      <h1>Paid </h1>
+      <table  class="table table-striped" style="width:100%">
+                          <tr>
+                               <th>Paid Month</th>
+                               <th>Bill</th>
+                               <th>Paid On</th>
+
+
+                          <tr>
+
+
+                          {% for p in billtableee %}
+                                <tr>
+                                    <td>{{ p.month }}</td>
+                                    <td>{{ p.amount }}</td>
+                                    <td>{{ p.paid_on }}</td>
+
+                                </tr>
+                          {% endfor %}
+
+                   </table>

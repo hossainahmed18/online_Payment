@@ -1,0 +1,53 @@
+#pics{
+   position:fixed;
+   height: 100vh;
+   background-image: url("back.png");
+   width:100vw;
+}
+
+#fullpage{
+   margin-top:0px;
+   height: 90vh;
+   overflow: hidden;
+   transition: all 500ms linear;
+
+
+}
+#fullpage.active{
+    margin-left: 220px;
+}
+
+.sc{
+
+    height: 90vh;
+
+}
+ #desh{
+
+
+	 text-align: center;
+	 line-height: 100vh;
+	 font-size:10em;
+
+
+}
+#one{
+    background: transparent;
+}
+#two{
+    background: pink;
+}
+#three{
+    background: transparent;
+}
+#four{
+    background: green;
+}
+#five{
+    background: purple;
+}
+
+#nimmi{
+     margin: 0;
+	 padding: 8px;
+}

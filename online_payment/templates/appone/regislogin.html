@@ -1,0 +1,113 @@
+{% extends 'appone/base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block stylesheet %}
+     <style type="text/css">
+
+           #panel{
+                  margin-top: 10%;
+                  margin-left: 10%;
+                  margin-right: 10%;
+
+
+           }
+           .formmm{
+                 width : auto;
+                 margin-left: 10px;
+                 background: white;
+
+
+           }
+
+           .form-group{
+                 width: 50%;
+           }
+
+           #loginform{
+                  padding: 10px 10px 10px 10px;
+                  display: none;
+           }
+            #registerform{
+                  padding: 10px 10px 10px 10px;
+                  display: none;
+           }
+
+
+     </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div id="panel">
+
+          <ul class="nav nav-tabs nav-justified">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="..." role="group" aria-label="...">
+                           <a type="button" href="{% url 'login' %}" class="btn btn-default">Login</a>
+                           <a type="button" href="{% url 'register' %}" class="btn btn-default">Register</a>
+                    </div>
+
+          </ul>
+
+          <div class="formmm">
+
+                <div id="loginform">
+                      <h1 style="color:black;">Login </h1>
+
+                      <form>
+                              <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                              </div>
+                              <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <input type="file" id="exampleInputFile">
+
+                              </div>
+
+                              <button type="submit" class="btn btn-default">Submit</button>
+                      </form>
+
+                </div>
+
+               <div id="registerform">
+                      <h1 style="color:black;">Sign Up for Free</h1>
+
+
+
+               </div>
+          </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+{% block script %}
+        <script type="text/javascript">
+               function login(){
+                    document.getElementById("registerform").style.display= "none";
+                    document.getElementById("loginform").style.display= "block";
+               }
+               function register(){
+                    document.getElementById("loginform").style.display= "none";
+                    document.getElementById("registerform").style.display= "block";
+               }
+        </script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'appone/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block stylesheet %}
+{% endblock %}
+
+
+{% block content %}
+<h1>{{amountt}}</h1>
+<h1>{{mass}}</h1>
+
+     <form action=" " method="POST">
+         {% csrf_token %}
+
+
+         <div class="form-group">
+               <label for="exampleInputAccountNo">Account Number</label>
+               <input type="text" name="accpass" class="form-control" placeholder="Account Password">
+               <input type="hidden" value="{{mass}}" name="mas">
+               <input type="hidden" value="{{amountt}}" name="amount">
+         </div>
+
+         <button class="btn btn-success" type="submit">Submit</button>
+
+
+
+     </form>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'appone/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block stylesheet %}
+{% endblock %}
+
+
+{% block content %}
+       <form action="" method="POST">
+               {% csrf_token %}
+
+              <div class="form-group">
+                    <label for="exampleInputBillno">Bill No</label>
+                    <input type="text" name="billno" class="form-control" id="exampleInputEmail1" placeholder="Bill Number">
+              </div>
+              <div class="form-group">
+                    <label for="exampleInputAccountNo">Account Number</label>
+                    <input type="text" name="accountno" class="form-control" id="exampleInputAccountNo" placeholder="Account number">
+              </div>
+
+              <button type="submit" class="btn btn-active">Submit</button>
+       </form>
+
+       {% if show == 1 %}
+
+             <form action="/submitchoice" method="GET">
+                   {% csrf_token %}
+                   <h1> Show </h1>
+
+                   <table  class="table table-striped" style="width:100%">
+                          <tr>
+                               <th>Unpaid Month</th>
+                               <th>Bill</th>
+                          <tr>
+
+
+                          {% for p in billtablee %}
+                                <tr>
+                                    <td>{{ p.month }}</td>
+                                    <td>{{ p.amount }}</td>
+                                    <td> <input type="hidden" value="{{p.month}}" name="mas"> </td>
+                                    <td> <input type="hidden" value="{{p.amount}}" name="amount"> </td>
+                                    <td> <button class="btn btn-success" type="submit"> Pay </button> </td>
+                                </tr>
+                          {% endfor %}
+
+                   </table>
+
+
+
+
+             </form>
+
+       {% endif %}
+{% endblock %}
+
+{% block script %}
+
+
+{% endblock %}

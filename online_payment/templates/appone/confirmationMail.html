@@ -1,0 +1,6 @@
+{% autoescape off %}
+    Hi {{user.name}}
+    Thank You for your egistration to our Bill.com
+    Please click in link below for log in
+     http://{{ domain }}{% url 'succesLogin' uid=uid token=token%}
+{% endautoescape %}

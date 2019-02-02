@@ -1,0 +1,21 @@
+{% extends 'appone/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block stylesheet %}
+{% endblock %}
+
+
+{% block content %}
+    {% for p in idd %}
+         <h1>{{ p }}</h1>
+
+
+         <!.......... or dekhate hole nicher h1 un comment hobe  ......>
+        <!       <h1>{{ p.month }}</h1>    >
+    {% endfor %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}

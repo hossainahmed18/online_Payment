@@ -1,0 +1,49 @@
+{% extends 'appone/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block stylesheet %}
+{% endblock %}
+
+
+{% block content %}
+
+
+   <div id="cc" style="display: block;">
+      <h1 > Show </h1>
+   </div>
+
+       <form action="" method="POST">
+               {% csrf_token %}
+
+              <div class="form-group">
+                    <label for="exampleInputBillno">Bill No</label>
+                    <input type="text" id="billno" name="billno" class="form-control" id="exampleInputEmail1" placeholder="Bill Number">
+              </div>
+              <div class="form-group">
+                    <label for="exampleInputAccountNo">Account Number</label>
+                    <input type="text" id="accountno" name="accountno" class="form-control" id="exampleInputAccountNo" placeholder="Account number">
+              </div>
+              <button type="button" id="ajaxsubmit" name="ajaxsubmit">Submit</button>
+
+       </form>
+
+       <div id="result">
+       </div>
+
+{% endblock %}
+
+
+
+{% block script %}
+        <script type="text/javascript">
+
+               function clickk(){
+                    document.getElementById("cc").style.display= "none";
+
+               }
+        </script>
+
+
+{% endblock %}
